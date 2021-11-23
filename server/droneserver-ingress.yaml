@@ -9,10 +9,10 @@ metadata:
     traefik.ingress.kubernetes.io/redirect-permanent: "true"
 spec:
   rules:
-  - host: drone.marceldempers.dev
-    http:
-      paths:
-      - backend:
-          serviceName: droneserver
-          servicePort: 80
-        path: /
+    - host: 13.234.195.244
+      http:
+        paths:
+          - backend:
+              serviceName: droneserver
+              servicePort: 80
+            path: /
