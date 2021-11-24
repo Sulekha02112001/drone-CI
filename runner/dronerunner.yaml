@@ -16,24 +16,21 @@ spec:
     spec:
       serviceAccountName: drone-runner
       containers:
-      - name: runner
-        image: drone/drone-runner-kube:latest
-        ports:
-        - containerPort: 3000
-        env:
-        - name: DRONE_NAMESPACE_DEFAULT
-          value: drone
-        - name: DRONE_SERVICE_ACCOUNT_DEFAULT
-          value: drone-runner
-        - name: DRONE_RPC_HOST
-          value: droneserver.drone
-        - name: DRONE_RPC_PROTO
-          value: http
-        - name: DRONE_RPC_SECRET 
-          valueFrom:
-            secretKeyRef:
-              name: drone-server-secret
-              key: DRONE_RPC_SECRET
+        - name: runner
+          image: drone/drone-runner-kube:latest
+          ports:
+            - containerPort: 3000
+          env:
+            - name: DRONE_NAMESPACE_DEFAULT
+              value: drone
+            - name: DRONE_SERVICE_ACCOUNT_DEFAULT
+              value: drone-runner
+            - name: DRONE_RPC_HOST
+              value: droneserver.drone
+            - name: DRONE_RPC_PROTO
+              value: http
+            - name: DRONE_RPC_SECRET
+              value: 6ddb82f167530f281c863e6100103c45
 ---
 apiVersion: v1
 kind: ServiceAccount
