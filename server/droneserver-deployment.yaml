@@ -29,7 +29,7 @@ spec:
             - containerPort: 31864
           env:
             - name: DRONE_USER_CREATE
-              value: username:kumarisulekha02112001@gmail.com,admin:true
+              value: username:Sulekha02112001,admin:true
             - name: DRONE_DATABASE_DRIVER
               value: postgres
             - name: DRONE_DATABASE_DATASOURCE
@@ -39,17 +39,8 @@ spec:
             - name: DRONE_SERVER_HOST
               value: 13.235.135.252
             - name: DRONE_GITHUB_CLIENT_ID
-              valueFrom:
-                secretKeyRef:
-                  name: drone-server-secret
-                  key: DRONE_GITHUB_CLIENT_ID
+              value: 3a5bb3d041634decbddd
             - name: DRONE_GITHUB_CLIENT_SECRET
-              valueFrom:
-                secretKeyRef:
-                  name: drone-server-secret
-                  key: DRONE_GITHUB_CLIENT_SECRET
+              value: ce51729c82d8eae33e6fd70ee209fb366e06b10e
             - name: DRONE_RPC_SECRET
-              valueFrom:
-                secretKeyRef:
-                  name: drone-server-secret
-                  key: DRONE_RPC_SECRET
+              value: 6ddb82f167530f281c863e6100103c45
