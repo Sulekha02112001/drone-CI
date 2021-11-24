@@ -29,7 +29,7 @@ spec:
             - containerPort: 31864
           env:
             - name: DRONE_USER_CREATE
-              value: username:Sulekha02112001,admin:true
+              value: username:kumarisulekha02112001@gmail.com,admin:true
             - name: DRONE_DATABASE_DRIVER
               value: postgres
             - name: DRONE_DATABASE_DATASOURCE
