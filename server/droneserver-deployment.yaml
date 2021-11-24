@@ -37,7 +37,7 @@ spec:
             - name: DRONE_SERVER_PROTO
               value: https
             - name: DRONE_SERVER_HOST
-              value: ec2-13-235-135-252.ap-south-1.compute.amazonaws.com
+              value: 13.235.135.252
             - name: DRONE_GITHUB_CLIENT_ID
               valueFrom:
                 secretKeyRef:
