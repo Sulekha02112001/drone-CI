@@ -21,44 +21,35 @@ spec:
         app: drone-server
     spec:
       containers:
-      - name: drone-server
-        image: drone/drone:1.6.5
-        imagePullPolicy: IfNotPresent
-        ports:
-        - containerPort: 80
-        - containerPort: 443
-        env:
-        - name: DRONE_USER_CREATE 
-          valueFrom:
-            secretKeyRef:
-              name: drone-server-secret
-              key: DRONE_USER_CREATE
-        - name: DRONE_DATABASE_DRIVER
-          value: postgres
-        - name: DRONE_DATABASE_DATASOURCE 
-          valueFrom:
-            secretKeyRef:
-              name: drone-server-secret
-              key: DRONE_DATABASE_DATASOURCE
-        - name: DRONE_SERVER_PROTO
-          value: https
-        - name: DRONE_SERVER_HOST 
-          valueFrom:
-            secretKeyRef:
-              name: drone-server-secret
-              key: DRONE_SERVER_HOST
-        - name: DRONE_GITHUB_CLIENT_ID 
-          valueFrom:
-            secretKeyRef:
-              name: drone-server-secret
-              key: DRONE_GITHUB_CLIENT_ID
-        - name: DRONE_GITHUB_CLIENT_SECRET 
-          valueFrom:
-            secretKeyRef:
-              name: drone-server-secret
-              key: DRONE_GITHUB_CLIENT_SECRET
-        - name: DRONE_RPC_SECRET 
-          valueFrom:
-            secretKeyRef:
-              name: drone-server-secret
-              key: DRONE_RPC_SECRET
+        - name: drone-server
+          image: drone/drone:1.6.5
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 80
+            - containerPort: 443
+          env:
+            - name: DRONE_USER_CREATE
+              value: username:Sulekha02112001,admin:true
+            - name: DRONE_DATABASE_DRIVER
+              value: postgres
+            - name: DRONE_DATABASE_DATASOURCE
+              value: postgres://postgresadmin:admin123@10.43.192.7:5432/postgresdb?sslmode=disable
+            - name: DRONE_SERVER_PROTO
+              value: https
+            - name: DRONE_SERVER_HOST
+              value: ec2-13-235-135-252.ap-south-1.compute.amazonaws.com
+            - name: DRONE_GITHUB_CLIENT_ID
+              valueFrom:
+                secretKeyRef:
+                  name: drone-server-secret
+                  key: DRONE_GITHUB_CLIENT_ID
+            - name: DRONE_GITHUB_CLIENT_SECRET
+              valueFrom:
+                secretKeyRef:
+                  name: drone-server-secret
+                  key: DRONE_GITHUB_CLIENT_SECRET
+            - name: DRONE_RPC_SECRET
+              valueFrom:
+                secretKeyRef:
+                  name: drone-server-secret
+                  key: DRONE_RPC_SECRET
