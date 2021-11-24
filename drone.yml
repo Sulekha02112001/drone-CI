@@ -15,13 +15,8 @@ steps:
       DOCKER_PASSWORD:
         from_secret: DOCKER_PASSWORD
     commands:
-<<<<<<< HEAD
       - sleep 5 # give docker enough time to start
       - docker login -u $DOCKER_USER -p $DOCKER_PASSWORD #docker
-=======
-      - sleep 5 #### give docker enough time to start
-      - docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
->>>>>>> 097a81c786f97134762d91cef3cfb55ef6d21103
       - docker build ./golang -t aimvector/golang:1.0.0
       - docker push aimvector/golang:1.0.0
 
