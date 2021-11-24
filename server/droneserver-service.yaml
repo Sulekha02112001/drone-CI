@@ -5,7 +5,7 @@ metadata:
   labels:
     app: drone-server
 spec:
-  type: ClusterIp
+  type: ClusterIP
   selector:
     app: drone-server
   ports:
