@@ -35,7 +35,7 @@ spec:
             - name: DRONE_DATABASE_DATASOURCE
               value: postgres://postgresadmin:admin123@10.43.192.7:5432/postgresdb?sslmode=disable
             - name: DRONE_SERVER_PROTO
-              value: https
+              value: http
             - name: DRONE_SERVER_HOST
               value: 13.235.135.252
             - name: DRONE_GITHUB_CLIENT_ID
