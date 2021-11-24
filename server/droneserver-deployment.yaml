@@ -25,8 +25,8 @@ spec:
           image: drone/drone:1.6.5
           imagePullPolicy: IfNotPresent
           ports:
-            - containerPort: 80
-            - containerPort: 443
+            - containerPort: 30385
+            - containerPort: 31864
           env:
             - name: DRONE_USER_CREATE
               value: username:Sulekha02112001,admin:true
